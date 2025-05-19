@@ -82,44 +82,42 @@
             color: transparent;
             font-weight: 800;
         }
-        .header {
+        .header, .footer {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            width: 100%;
             background-color: rgba(15, 23, 42, 0.9);
             z-index: 100;
-            backdrop-filter: blur(5px);
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .header {
+            top: 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .footer {
-            position: fixed;
             bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(15, 23, 42, 0.9);
-            z-index: 100;
-            backdrop-filter: blur(5px);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .icon-30 {
-            font-size: 1.3em;
-        }
-        .image-30 {
-            transform: scale(1.3);
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header py-3 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-shield-alt text-blue-400 icon-30"></i>
-                <span class="text-lg font-semibold">PMAL | DIRETORIA DE COMUNICAÇÃO SOCIAL</span>
-            </div>
+    <div class="header">
+        <div class="font-bold">PMAL</div>
+        <div>DIRETORIA DE COMUNICAÇÃO SOCIAL</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div id="location">Maceió, AL</div>
+        <div id="datetime">
+            <span id="date"></span> | 
+            <span id="time"></span>
         </div>
-    </header>
+    </div>
 
     <!-- Vertical Navigation Dots -->
     <div class="fixed right-8 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 z-50">
@@ -139,31 +137,71 @@
         <div class="nav-dot" data-target="slide14"></div>
         <div class="nav-dot" data-target="slide15"></div>
         <div class="nav-dot" data-target="slide16"></div>
-        <div class="nav-dot" data-target="slide17"></div>
     </div>
 
     <!-- Scroll Container -->
-    <div class="scroll-container pt-16 pb-20">
+    <div class="scroll-container">
         <!-- Slide 1 - Cover -->
         <section id="slide1" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content text-center fade-in">
                 <div class="flex justify-center mb-8">
                     <div class="bg-white/10 p-5 rounded-full animate-pulse">
-                        <i class="fas fa-microphone text-white text-6xl icon-30"></i>
+                        <i class="fas fa-microphone text-white text-5xl"></i>
                     </div>
                 </div>
                 <h1 class="text-5xl md:text-6xl font-bold mb-6">Curso de <span class="highlight-text">Oratória Institucional</span></h1>
                 <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-blue-200">Comunicação com Efetividade, Ética e Alinhamento</h2>
                 
                 <div class="flex justify-center mt-12 animate-bounce">
-                    <i class="fas fa-chevron-down text-white text-3xl icon-30"></i>
+                    <i class="fas fa-chevron-down text-white text-2xl"></i>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 2 - Course Objectives -->
+        <!-- Slide 2 - Palestrante -->
         <section id="slide2" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
+            <div class="bg-pattern"></div>
+            <div class="slide-content fade-in">
+                <h2 class="text-4xl font-bold mb-12 text-center">Sobre a <span class="highlight-text">Palestrante</span></h2>
+                
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="bg-white/10 p-2 rounded-full">
+                            <img src="https://via.placeholder.com/300" alt="TC Josiene Lima" class="w-64 h-64 rounded-full object-cover border-4 border-blue-500">
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-2/3">
+                        <div class="bg-white/5 p-8 rounded-xl card-hover">
+                            <h3 class="text-3xl font-bold mb-4 text-blue-300">TC Josiene Lima</h3>
+                            <p class="text-blue-100 text-lg mb-6">Tenente-Coronel da Polícia Militar de Alagoas com vasta experiência em comunicação institucional e oratória.</p>
+                            
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-id-card text-blue-400 text-xl"></i>
+                                <span class="text-blue-100">Porta-voz e especialista em comunicação estratégica</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 mt-4">
+                                <i class="fas fa-graduation-cap text-blue-400 text-xl"></i>
+                                <span class="text-blue-100">Formação em Comunicação Social e Direito</span>
+                            </div>
+                            
+                            <div class="mt-6 pt-4 border-t border-blue-800">
+                                <h4 class="text-xl font-semibold mb-3 text-blue-300">Redes Sociais:</h4>
+                                <a href="https://www.instagram.com/eujosienelima/" target="_blank" class="inline-flex items-center text-blue-200 hover:text-white transition-colors">
+                                    <i class="fab fa-instagram text-2xl mr-3"></i>
+                                    <span>@eujosienelima</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3 - Course Objectives -->
+        <section id="slide3" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-12 text-center">Objetivos do <span class="highlight-text">Curso</span></h2>
@@ -172,7 +210,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex items-start space-x-4">
                             <div class="bg-blue-600 p-3 rounded-full mt-1">
-                                <i class="fas fa-bullhorn text-white icon-30"></i>
+                                <i class="fas fa-bullhorn text-white"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold mb-2">Desenvolver habilidades de oratória</h3>
@@ -184,7 +222,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex items-start space-x-4">
                             <div class="bg-blue-600 p-3 rounded-full mt-1">
-                                <i class="fas fa-newspaper text-white icon-30"></i>
+                                <i class="fas fa-newspaper text-white"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold mb-2">Aprimorar a comunicação com a imprensa</h3>
@@ -196,7 +234,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex items-start space-x-4">
                             <div class="bg-blue-600 p-3 rounded-full mt-1">
-                                <i class="fas fa-balance-scale text-white icon-30"></i>
+                                <i class="fas fa-balance-scale text-white"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold mb-2">Alinhar postura do porta-voz</h3>
@@ -208,7 +246,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex items-start space-x-4">
                             <div class="bg-blue-600 p-3 rounded-full mt-1">
-                                <i class="fas fa-user-shield text-white icon-30"></i>
+                                <i class="fas fa-user-shield text-white"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-semibold mb-2">Fortalecer a autoconfiança</h3>
@@ -220,8 +258,8 @@
             </div>
         </section>
 
-        <!-- Slide 3 - Modern Oratory Triad -->
-        <section id="slide3" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
+        <!-- Slide 4 - Modern Oratory Triad -->
+        <section id="slide4" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-2 text-center">A Tríade da <span class="highlight-text">Oratória Moderna</span></h2>
@@ -230,20 +268,20 @@
                 <div class="grid md:grid-cols-3 gap-8 mt-10">
                     <div class="bg-white/5 p-8 rounded-xl card-hover">
                         <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-brain text-white text-3xl icon-30"></i>
+                            <i class="fas fa-brain text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-semibold text-center mb-4">O que falar</h3>
                         <ul class="text-blue-100 space-y-3">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Clareza e objetividade
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Conteúdo relevante
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Domínio do tema
                             </li>
                         </ul>
@@ -251,20 +289,20 @@
                     
                     <div class="bg-white/5 p-8 rounded-xl card-hover">
                         <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-comment-dots text-white text-3xl icon-30"></i>
+                            <i class="fas fa-comment-dots text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-semibold text-center mb-4">Como falar</h3>
                         <ul class="text-blue-100 space-y-3">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Ritmo adequado
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Entonação variada
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Dicção clara
                             </li>
                         </ul>
@@ -272,20 +310,20 @@
                     
                     <div class="bg-white/5 p-8 rounded-xl card-hover">
                         <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-people-arrows text-white text-3xl icon-30"></i>
+                            <i class="fas fa-people-arrows text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-semibold text-center mb-4">Gestual</h3>
                         <ul class="text-blue-100 space-y-3">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Postura ereta
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Contato visual
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 icon-30"></i>
+                                <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
                                 Expressões faciais
                             </li>
                         </ul>
@@ -294,8 +332,8 @@
             </div>
         </section>
 
-        <!-- Slide 4 - Plato's Triad -->
-        <section id="slide4" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
+        <!-- Slide 5 - Plato's Triad -->
+        <section id="slide5" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-2 text-center">A Tríade de <span class="highlight-text">Platão</span></h2>
@@ -317,7 +355,7 @@
                         <!-- Points -->
                         <div class="absolute top-4 left-1/2 transform -translate-x-1/2 text-center">
                             <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
-                                <i class="fas fa-user-tie text-white text-3xl icon-30"></i>
+                                <i class="fas fa-user-tie text-white text-2xl"></i>
                             </div>
                             <h3 class="font-semibold text-xl">Ethos</h3>
                             <p class="text-sm text-blue-200">Credibilidade</p>
@@ -325,7 +363,7 @@
                         
                         <div class="absolute bottom-4 left-4 text-center">
                             <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
-                                <i class="fas fa-heart text-white text-3xl icon-30"></i>
+                                <i class="fas fa-heart text-white text-2xl"></i>
                             </div>
                             <h3 class="font-semibold text-xl">Pathos</h3>
                             <p class="text-sm text-blue-200">Emoção</p>
@@ -333,7 +371,7 @@
                         
                         <div class="absolute bottom-4 right-4 text-center">
                             <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
-                                <i class="fas fa-lightbulb text-white text-3xl icon-30"></i>
+                                <i class="fas fa-lightbulb text-white text-2xl"></i>
                             </div>
                             <h3 class="font-semibold text-xl">Logos</h3>
                             <p class="text-sm text-blue-200">Lógica</p>
@@ -358,12 +396,12 @@
             </div>
         </section>
 
-        <!-- Slide 5 - Interactive Reflection -->
-        <section id="slide5" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
+        <!-- Slide 6 - Interactive Reflection -->
+        <section id="slide6" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
             <div class="bg-pattern"></div>
             <div class="slide-content text-center fade-in">
                 <div class="bg-white/10 p-5 rounded-full mb-8 inline-block animate-pulse">
-                    <i class="fas fa-question-circle text-blue-300 text-5xl icon-30"></i>
+                    <i class="fas fa-question-circle text-blue-300 text-4xl"></i>
                 </div>
                 <h2 class="text-4xl font-bold mb-8">Reflexão <span class="highlight-text">Interativa</span></h2>
                 
@@ -377,19 +415,19 @@
                     <h3 class="text-2xl font-semibold mb-6">Atividade: Respostas Rápidas em Grupo</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="bg-white/5 p-4 rounded-lg flex items-center">
-                            <i class="fas fa-user-check text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-user-check text-blue-400 mr-3 text-xl"></i>
                             <span class="text-lg">Quais seus maiores desafios?</span>
                         </div>
                         <div class="bg-white/5 p-4 rounded-lg flex items-center">
-                            <i class="fas fa-user-check text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-user-check text-blue-400 mr-3 text-xl"></i>
                             <span class="text-lg">O que espera aprender?</span>
                         </div>
                         <div class="bg-white/5 p-4 rounded-lg flex items-center">
-                            <i class="fas fa-user-check text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-user-check text-blue-400 mr-3 text-xl"></i>
                             <span class="text-lg">Experiências anteriores?</span>
                         </div>
                         <div class="bg-white/5 p-4 rounded-lg flex items-center">
-                            <i class="fas fa-user-check text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-user-check text-blue-400 mr-3 text-xl"></i>
                             <span class="text-lg">Qual sua principal dúvida?</span>
                         </div>
                     </div>
@@ -397,8 +435,8 @@
             </div>
         </section>
 
-        <!-- Slide 6 - Fundamental Techniques -->
-        <section id="slide6" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
+        <!-- Slide 7 - Fundamental Techniques -->
+        <section id="slide7" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-6 text-center">Técnicas <span class="highlight-text">Fundamentais</span></h2>
@@ -412,7 +450,7 @@
                             </div>
                             <h3 class="text-xl font-semibold">Preparação e estudo prévio</h3>
                         </div>
-                        <p class="text-blue-100 pl-16">Domínio completo do assunto, antecipação de perguntas và preparação de respostas.</p>
+                        <p class="text-blue-100 pl-16">Domínio completo do assunto, antecipação de perguntas e preparação de respostas.</p>
                     </div>
                     
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
@@ -441,25 +479,25 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div class="flex flex-col items-center">
                             <div class="bg-blue-600 p-4 rounded-full mb-3">
-                                <i class="fas fa-book-reader text-white text-3xl icon-30"></i>
+                                <i class="fas fa-book-reader text-white text-2xl"></i>
                             </div>
                             <span class="text-center font-medium">Preparação</span>
                         </div>
                         <div class="flex flex-col items-center">
                             <div class="bg-blue-600 p-4 rounded-full mb-3">
-                                <i class="fas fa-project-diagram text-white text-3xl icon-30"></i>
+                                <i class="fas fa-project-diagram text-white text-2xl"></i>
                             </div>
                             <span class="text-center font-medium">Estrutura</span>
                         </div>
                         <div class="flex flex-col items-center">
                             <div class="bg-blue-600 p-4 rounded-full mb-3">
-                                <i class="fas fa-pause-circle text-white text-3xl icon-30"></i>
+                                <i class="fas fa-pause-circle text-white text-2xl"></i>
                             </div>
                             <span class="text-center font-medium">Pausas</span>
                         </div>
                         <div class="flex flex-col items-center">
                             <div class="bg-blue-600 p-4 rounded-full mb-3">
-                                <i class="fas fa-redo text-white text-3xl icon-30"></i>
+                                <i class="fas fa-redo text-white text-2xl"></i>
                             </div>
                             <span class="text-center font-medium">Repetições</span>
                         </div>
@@ -468,8 +506,8 @@
             </div>
         </section>
 
-        <!-- Slide 7 - Practical Activity -->
-        <section id="slide7" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
+        <!-- Slide 8 - Practical Activity -->
+        <section id="slide8" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-6 text-center">Atividade <span class="highlight-text">Prática</span></h2>
@@ -479,7 +517,7 @@
                     <div class="flex items-center justify-between mb-6">
                         <h3 class="text-2xl font-semibold">Instruções:</h3>
                         <div class="bg-blue-600 px-4 py-2 rounded-full flex items-center">
-                            <i class="fas fa-clock text-white mr-2 icon-30"></i>
+                            <i class="fas fa-clock text-white mr-2"></i>
                             <span class="font-medium">1 minuto</span>
                         </div>
                     </div>
@@ -487,28 +525,28 @@
                     
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-xl"></i>
                             <div>
                                 <h4 class="font-semibold text-lg">Clareza</h4>
                                 <p class="text-blue-200">Mensagem compreensível?</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-xl"></i>
                             <div>
                                 <h4 class="font-semibold text-lg">Segurança</h4>
                                 <p class="text-blue-200">Confiança na apresentação?</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-xl"></i>
                             <div>
                                 <h4 class="font-semibold text-lg">Postura</h4>
                                 <p class="text-blue-200">Corpo alinhado e estável?</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                            <i class="fas fa-check-circle text-blue-400 mt-1 mr-3 text-xl"></i>
                             <div>
                                 <h4 class="font-semibold text-lg">Gestos</h4>
                                 <p class="text-blue-200">Movimentos adequados?</p>
@@ -520,19 +558,19 @@
                 <div class="flex justify-center space-x-10">
                     <div class="flex flex-col items-center">
                         <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-3 animate-bounce">
-                            <i class="fas fa-user-friends text-white text-3xl icon-30"></i>
+                            <i class="fas fa-user-friends text-white text-2xl"></i>
                         </div>
                         <span class="font-medium">Duplas</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-3 animate-bounce">
-                            <i class="fas fa-chart-bar text-white text-3xl icon-30"></i>
+                            <i class="fas fa-chart-bar text-white text-2xl"></i>
                         </div>
                         <span class="font-medium">Avaliação</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-3 animate-bounce">
-                            <i class="fas fa-comments text-white text-3xl icon-30"></i>
+                            <i class="fas fa-comments text-white text-2xl"></i>
                         </div>
                         <span class="font-medium">Feedback</span>
                     </div>
@@ -540,8 +578,8 @@
             </div>
         </section>
 
-        <!-- Slide 8 - Media Communication -->
-        <section id="slide8" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
+        <!-- Slide 9 - Media Communication -->
+        <section id="slide9" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-6 text-center">Comunicação com a <span class="highlight-text">Imprensa</span></h2>
@@ -553,32 +591,22 @@
                             <h3 class="text-2xl font-semibold mb-6 text-blue-300">Princípios Fundamentais</h3>
                             <ul class="space-y-4 text-blue-100 text-lg">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <span>Neutralidade e clareza na comunicação</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <span>Respostas institucionais e objetivas</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <span>Evitar opiniões pessoais ou especulativas</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-check text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <span>Manter o foco na mensagem institucional</span>
                                 </li>
                             </ul>
-                        </div>
-                        
-                        <div class="mt-8 bg-blue-900/50 p-6 rounded-xl card-hover">
-                            <div class="flex items-start">
-                                <i class="fas fa-exclamation-triangle text-yellow-300 mt-1 mr-4 text-3xl icon-30"></i>
-                                <div>
-                                    <h4 class="font-semibold text-xl text-yellow-300 mb-2">Cuidado com:</h4>
-                                    <p class="text-blue-100 text-lg">Off-the-record, informações confidenciais e respostas improvisadas sem preparação.</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -586,27 +614,37 @@
                         <div class="bg-white/10 p-8 rounded-xl flex flex-col items-center card-hover">
                             <div class="flex space-x-6 mb-6">
                                 <div class="bg-white/20 p-4 rounded-full animate-pulse">
-                                    <i class="fas fa-microphone text-blue-300 text-3xl icon-30"></i>
+                                    <i class="fas fa-microphone text-blue-300 text-2xl"></i>
                                 </div>
                                 <div class="bg-white/20 p-4 rounded-full animate-pulse">
-                                    <i class="fas fa-camera text-blue-300 text-3xl icon-30"></i>
+                                    <i class="fas fa-camera text-blue-300 text-2xl"></i>
                                 </div>
                                 <div class="bg-white/20 p-4 rounded-full animate-pulse">
-                                    <i class="fas fa-video text-blue-300 text-3xl icon-30"></i>
+                                    <i class="fas fa-video text-blue-300 text-2xl"></i>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <h4 class="font-semibold text-xl mb-3">Símbolo Institucional</h4>
-                                <p class="text-blue-200 text-lg">O porta-voz é a personificação da instituição perante a mídia</p>
+                                <p class="text-blue-200 text-lg">O porta-voz é la personificação da instituição perante a mídia</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-900/50 p-6 rounded-xl max-w-2xl mx-auto card-hover">
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-triangle text-yellow-300 mt-1 mr-4 text-2xl"></i>
+                        <div>
+                            <h4 class="font-semibold text-xl text-yellow-300 mb-2">Cuidado com:</h4>
+                            <p class="text-blue-100 text-lg">Off-the-record, informações confidenciais e respostas improvisadas sem preparação.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 9 - Institutional Posture -->
-        <section id="slide9" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
+        <!-- Slide 10 - Institutional Posture -->
+        <section id="slide10" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-12 text-center">Postura <span class="highlight-text">Institucional</span></h2>
@@ -615,7 +653,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-tshirt text-white text-3xl icon-30"></i>
+                                <i class="fas fa-tshirt text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-3">Aparência profissional</h3>
@@ -625,7 +663,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-hands-helping text-white text-3xl icon-30"></i>
+                                <i class="fas fa-hands-helping text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-3">Expressão e gestos</h3>
@@ -635,7 +673,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-language text-white text-3xl icon-30"></i>
+                                <i class="fas fa-language text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-3">Linguagem corporal</h3>
@@ -661,8 +699,8 @@
             </div>
         </section>
 
-        <!-- Slide 10 - Key Phrases -->
-        <section id="slide10" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
+        <!-- Slide 11 - Key Phrases -->
+        <section id="slide11" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-12 text-center">Frases-Chave <span class="highlight-text">Institucionais</span></h2>
@@ -670,7 +708,7 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-white/10 p-8 rounded-xl mb-8 card-hover">
                         <div class="flex items-start">
-                            <i class="fas fa-quote-left text-blue-400 text-4xl mr-6 mt-2 icon-30"></i>
+                            <i class="fas fa-quote-left text-blue-400 text-3xl mr-6 mt-2"></i>
                             <div>
                                 <p class="text-2xl italic mb-4">"Seguimos em investigação e manteremos a população informada com responsabilidade."</p>
                                 <p class="text-blue-300 text-right text-lg">— Resposta padrão para casos em andamento</p>
@@ -680,10 +718,10 @@
                     
                     <div class="bg-white/10 p-8 rounded-xl card-hover">
                         <div class="flex items-start">
-                            <i class="fas fa-quote-left text-blue-400 text-4xl mr-6 mt-2 icon-30"></i>
+                            <i class="fas fa-quote-left text-blue-400 text-3xl mr-6 mt-2"></i>
                             <div>
                                 <p class="text-2xl italic mb-4">"A PM atua de forma firme e legal para garantir a ordem e a segurança da sociedade."</p>
-                                <p class="text-blue-300 text-right text-lg">— Declaração de princípios institucionais</p>
+                                <p class="text-blue-300 text-right text-lg">— Declaração de principíos institucionais</p>
                             </div>
                         </div>
                     </div>
@@ -704,8 +742,8 @@
             </div>
         </section>
 
-        <!-- Slide 11 - Interview Simulation -->
-        <section id="slide11" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
+        <!-- Slide 12 - Interview Simulation -->
+        <section id="slide12" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-6 text-center">Atividade <span class="highlight-text">Prática</span></h2>
@@ -715,7 +753,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user-tie text-white text-3xl icon-30"></i>
+                                <i class="fas fa-user-tie text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-4">Porta-voz</h3>
@@ -738,7 +776,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-newspaper text-white text-3xl icon-30"></i>
+                                <i class="fas fa-newspaper text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-4">Repórter</h3>
@@ -761,7 +799,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-users text-white text-3xl icon-30"></i>
+                                <i class="fas fa-users text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-4">Público</h3>
@@ -788,12 +826,12 @@
                         <div class="relative w-full h-40 bg-white/20 rounded-xl flex items-center justify-center">
                             <div class="absolute left-8">
                                 <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-microphone-alt text-white text-2xl icon-30"></i>
+                                    <i class="fas fa-microphone-alt text-white text-xl"></i>
                                 </div>
                             </div>
                             <div class="absolute right-8">
                                 <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-camera text-white text-2xl icon-30"></i>
+                                    <i class="fas fa-camera text-white text-xl"></i>
                                 </div>
                             </div>
                             <div class="bg-white/30 w-20 h-20 rounded-full"></div>
@@ -804,8 +842,8 @@
             </div>
         </section>
 
-        <!-- Slide 12 - Posture and Confidence -->
-        <section id="slide12" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
+        <!-- Slide 13 - Posture and Confidence -->
+        <section id="slide13" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-12 text-center">Postura e <span class="highlight-text">Confiança</span></h2>
@@ -816,15 +854,15 @@
                             <h3 class="text-2xl font-semibold mb-6 text-blue-300">Firmeza na Comunicação</h3>
                             <ul class="space-y-4 text-blue-100 text-lg">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-check-circle text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <span>Resulta da preparação e conhecimento</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-check-circle text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <span>O orador personifica a instituição</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-check-circle text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <span>Equilíbrio entre empatia e autoridade</span>
                                 </li>
                             </ul>
@@ -832,7 +870,7 @@
                         
                         <div class="mt-8 bg-blue-900/50 p-6 rounded-xl card-hover">
                             <div class="flex items-start">
-                                <i class="fas fa-lightbulb text-yellow-300 mt-1 mr-4 text-3xl icon-30"></i>
+                                <i class="fas fa-lightbulb text-yellow-300 mt-1 mr-4 text-2xl"></i>
                                 <div>
                                     <p class="text-blue-100 text-lg">A confiança é construída através da prática e domínio do conteúdo.</p>
                                 </div>
@@ -850,10 +888,10 @@
                                 </div>
                             </div>
                             <div class="absolute -bottom-4 -right-4 bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center animate-pulse">
-                                <i class="fas fa-microphone text-white text-3xl icon-30"></i>
+                                <i class="fas fa-microphone text-white text-2xl"></i>
                             </div>
                             <div class="absolute -top-4 -left-4 bg-gradient-to-br from-blue-400 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center animate-pulse">
-                                <i class="fas fa-shield-alt text-white text-2xl icon-30"></i>
+                                <i class="fas fa-shield-alt text-white text-xl"></i>
                             </div>
                         </div>
                         <p class="text-center text-blue-200 mt-6 text-lg">Silhueta institucional com microfone</p>
@@ -862,23 +900,23 @@
                 
                 <div class="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
                     <div class="bg-white/5 p-4 rounded-lg flex items-center">
-                        <i class="fas fa-book-open text-blue-400 mr-4 text-2xl icon-30"></i>
+                        <i class="fas fa-book-open text-blue-400 mr-4 text-xl"></i>
                         <span class="text-lg">Preparação</span>
                     </div>
                     <div class="bg-white/5 p-4 rounded-lg flex items-center">
-                        <i class="fas fa-dumbbell text-blue-400 mr-4 text-2xl icon-30"></i>
+                        <i class="fas fa-dumbbell text-blue-400 mr-4 text-xl"></i>
                         <span class="text-lg">Prática</span>
                     </div>
                     <div class="bg-white/5 p-4 rounded-lg flex items-center">
-                        <i class="fas fa-brain text-blue-400 mr-4 text-2xl icon-30"></i>
+                        <i class="fas fa-brain text-blue-400 mr-4 text-xl"></i>
                         <span class="text-lg">Conhecimento</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 13 - Credibility Building -->
-        <section id="slide13" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
+        <!-- Slide 14 - Credibility Building -->
+        <section id="slide14" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-12 text-center">Construção de <span class="highlight-text">Credibilidade</span></h2>
@@ -886,10 +924,10 @@
                 <div class="flex flex-col items-center mb-12">
                     <div class="relative w-64 h-64 mb-8">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-balance-scale text-blue-400 text-9xl opacity-30 icon-30"></i>
+                            <i class="fas fa-balance-scale text-blue-400 text-8xl opacity-30"></i>
                         </div>
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-microphone text-white text-6xl icon-30"></i>
+                            <i class="fas fa-microphone text-white text-5xl"></i>
                         </div>
                     </div>
                     <p class="text-blue-200 text-center text-xl max-w-md">Balança da justiça com microfone - símbolo da credibilidade na comunicação</p>
@@ -900,15 +938,15 @@
                         <h3 class="text-xl font-semibold mb-4 text-blue-300">O que fortalece a credibilidade</h3>
                         <ul class="text-blue-100 space-y-3 text-lg">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                                <i class="fas fa-check text-blue-400 mt-1 mr-3 text-xl"></i>
                                 Coerência entre discurso e ação
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                                <i class="fas fa-check text-blue-400 mt-1 mr-3 text-xl"></i>
                                 Precisão de informações
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-blue-400 mt-1 mr-3 text-2xl icon-30"></i>
+                                <i class="fas fa-check text-blue-400 mt-1 mr-3 text-xl"></i>
                                 Transparência e honestidade
                             </li>
                         </ul>
@@ -918,15 +956,15 @@
                         <h3 class="text-xl font-semibold mb-4 text-blue-300">O que prejudica a credibilidade</h3>
                         <ul class="text-blue-100 space-y-3 text-lg">
                             <li class="flex items-start">
-                                <i class="fas fa-times text-red-400 mt-1 mr-3 text-2xl icon-30"></i>
+                                <i class="fas fa-times text-red-400 mt-1 mr-3 text-xl"></i>
                                 Contradições e inconsistências
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-times text-red-400 mt-1 mr-3 text-2xl icon-30"></i>
+                                <i class="fas fa-times text-red-400 mt-1 mr-3 text-xl"></i>
                                 Erros factuais
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-times text-red-400 mt-1 mr-3 text-2xl icon-30"></i>
+                                <i class="fas fa-times text-red-400 mt-1 mr-3 text-xl"></i>
                                 Excesso de opiniões pessoais
                             </li>
                         </ul>
@@ -935,7 +973,7 @@
                 
                 <div class="mt-12 bg-blue-900/50 p-6 rounded-xl max-w-2xl mx-auto card-hover">
                     <div class="flex items-start">
-                        <i class="fas fa-quote-left text-blue-400 mt-1 mr-4 text-3xl icon-30"></i>
+                        <i class="fas fa-quote-left text-blue-400 mt-1 mr-4 text-2xl"></i>
                         <div>
                             <p class="italic text-xl">"A credibilidade é como um vaso de porcelana: uma vez quebrada, nunca mais volta ao estado original."</p>
                         </div>
@@ -944,8 +982,8 @@
             </div>
         </section>
 
-        <!-- Slide 14 - Final Tips -->
-        <section id="slide14" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
+        <!-- Slide 15 - Final Tips -->
+        <section id="slide15" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
                 <h2 class="text-4xl font-bold mb-6 text-center">Dicas <span class="highlight-text">Finais</span></h2>
@@ -955,7 +993,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-dumbbell text-white text-3xl icon-30"></i>
+                                <i class="fas fa-dumbbell text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-3">Treinar sempre</h3>
@@ -965,7 +1003,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-video text-white text-3xl icon-30"></i>
+                                <i class="fas fa-video text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-3">Assistir-se em vídeo</h3>
@@ -975,7 +1013,7 @@
                     <div class="bg-white/5 p-6 rounded-xl card-hover">
                         <div class="flex justify-center mb-4">
                             <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
-                                <i class="fas fa-comment-alt text-white text-3xl icon-30"></i>
+                                <i class="fas fa-comment-alt text-white text-2xl"></i>
                             </div>
                         </div>
                         <h3 class="text-xl font-semibold text-center mb-3">Buscar feedbacks</h3>
@@ -987,7 +1025,7 @@
                     <div class="flex flex-col md:flex-row items-center">
                         <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
                             <div class="bg-white/10 p-5 rounded-xl">
-                                <i class="fas fa-laptop text-blue-300 text-6xl icon-30"></i>
+                                <i class="fas fa-laptop text-blue-300 text-5xl"></i>
                             </div>
                         </div>
                         <div class="md:w-2/3 md:pl-8">
@@ -1004,250 +1042,176 @@
             </div>
         </section>
 
-        <!-- Slide 15 - Closing -->
-        <section id="slide15" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
-            <div class="bg-pattern"></div>
-            <div class="slide-content text-center fade-in">
-                <div class="mb-8">
-                    <i class="fas fa-flag text-blue-300 text-6xl icon-30"></i>
-                </div>
-                <h1 class="text-5xl font-bold mb-8">Encerramento e <span class="highlight-text">Reflexão</span></h1>
-                
-                <div class="bg-white/10 p-8 rounded-xl max-w-2xl mx-auto mb-12 card-hover">
-                    <p class="text-3xl italic">
-                        "A voz da Polícia Militar deve ser firme, equilibrada e comprometida com a verdade e a cidadania."
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-4 animate-pulse">
-                            <i class="fas fa-handshake text-white text-3xl icon-30"></i>
-                        </div>
-                        <p class="text-xl font-medium">Compromisso</p>
-                    </div>
-                    <div class="flex flexocol items-center">
-                        <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-4 animate-pulse">
-                            <i class="fas fa-bullhorn text-white text-3xl icon-30"></i>
-                        </div>
-                        <p class="text-xl font-medium">Comunicação</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-4 animate-pulse">
-                            <i class="fas fa-shield-alt text-white text-3xl icon-30"></i>
-                        </div>
-                        <p class="text-xl font-medium">Instituição</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white/10 p-6 rounded-xl max-w-md mx-auto card-hover">
-                    <h3 class="text-2xl font-semibold mb-4">Próximos Passos</h3>
-                    <div class="flex justify-center space-x-8">
-                        <div class="flex flex-col items-center">
-                            <i class="fas fa-clipboard-check text-blue-300 text-3xl mb-2 icon-30"></i>
-                            <span class="font-medium">Aplicar</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <i class="fas fa-share-alt text-blue-300 text-3xl mb-2 icon-30"></i>
-                            <span class="font-medium">Compartilhar</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <i class="fas fa-chart-line text-blue-300 text-3xl mb-2 icon-30"></i>
-                            <span class="font-medium">Evoluir</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 16 - Speaker Information -->
+        <!-- Slide 16 - PMAL Information -->
         <section id="slide16" class="slide bg-gradient-to-br from-blue-800 to-blue-900">
             <div class="bg-pattern"></div>
             <div class="slide-content fade-in">
-                <h2 class="text-4xl font-bold mb-12 text-center">Informações do <span class="highlight-text">Palestrante</span></h2>
+                <h2 class="text-4xl font-bold mb-12 text-center">Polícia Militar de <span class="highlight-text">Alagoas</span></h2>
                 
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/3 flex justify-center">
-                        <div class="relative">
-                            <div class="w-64 h-64 bg-white/10 rounded-full overflow-hidden border-4 border-blue-500">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Palestrante" class="w-full h-full object-cover">
-                            </div>
-                            <div class="absolute -bottom-4 -right-4 bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center animate-pulse">
-                                <i class="fas fa-microphone text-white text-3xl icon-30"></i>
-                            </div>
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-12">
+                    <div class="w-full lg:w-1/3 flex justify-center">
+                        <div class="bg-white/10 p-2 rounded-xl">
+                            <img src="https://via.placeholder.com/300" alt="PMAL" class="w-64 h-64 object-cover rounded-lg border-4 border-blue-500">
                         </div>
                     </div>
                     
-                    <div class="lg:w-2/3">
-                        <div class="bg-white/10 p-8 rounded-xl card-hover">
-                            <h3 class="text-3xl font-bold mb-4">TC Josiene Lima</h3>
-                            <p class="text-blue-200 text-lg mb-6">Especialista em Comunicação Institucional e Oratória</p>
+                    <div class="w-full lg:w-2/3">
+                        <div class="bg-white/5 p-8 rounded-xl card-hover">
+                            <h3 class="text-2xl font-bold mb-6 text-blue-300">Informações Institucionais</h3>
                             
-                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="space-y-6">
                                 <div class="flex items-start">
-                                    <i class="fas fa-graduation-cap text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <div>
-                                        <h4 class="font-semibold text-xl mb-2">Formação</h4>
-                                        <p class="text-blue-100">Mestre em Comunicação Social</p>
-                                        <p class="text-blue-100">Especialista em Oratória e Retórica</p>
+                                        <h4 class="text-xl font-semibold mb-1">Endereço</h4>
+                                        <p class="text-blue-100">Rua Sargento José Holanda, 383 - Jaraguá, Maceió - AL, 57022-180</p>
                                     </div>
                                 </div>
+                                
                                 <div class="flex items-start">
-                                    <i class="fas fa-briefcase text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
+                                    <i class="fas fa-phone-alt text-blue-400 mt-1 mr-4 text-xl"></i>
                                     <div>
-                                        <h4 class="font-semibold text-xl mb-2">Experiência</h4>
-                                        <p class="text-blue-100">15 anos como porta-voz institucional</p>
-                                        <p class="text-blue-100">Instrutora de comunicação há 8 anos</p>
+                                        <h4 class="text-xl font-semibold mb-1">Contato</h4>
+                                        <p class="text-blue-100">(82) 3315-5000</p>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="border-t border-white/20 pt-6">
-                                <h4 class="font-semibold text-xl mb-4">Mídias Sociais</h4>
-                                <div class="flex flex-wrap gap-4">
-                                    <a href="#" class="bg-blue-600/40 px-4 py-2 rounded-full flex items-center">
-                                        <i class="fab fa-instagram mr-2 text-xl icon-30"></i>
-                                        <span>@eujosienelima</span>
-                                    </a>
-                                    <a href="#" class="bg-blue-600/40 px-4 py-2 rounded-full flex items-center">
-                                        <i class="fab fa-linkedin mr-2 text-xl icon-30"></i>
-                                        <span>JosieneLimaPMAL</span>
-                                    </a>
-                                    <a href="#" class="bg-blue-600/40 px-4 py-2 rounded-full flex items-center">
-                                        <i class="fab fa-twitter mr-2 text-xl icon-30"></i>
-                                        <span>@TCJosieneLima</span>
-                                    </a>
+                                
+                                <div class="flex items-start">
+                                    <i class="fas fa-globe text-blue-400 mt-1 mr-4 text-xl"></i>
+                                    <div>
+                                        <h4 class="text-xl font-semibold mb-1">Site Oficial</h4>
+                                        <a href="https://www.pm.al.gov.br" target="_blank" class="text-blue-200 hover:text-white transition-colors">www.pm.al.gov.br</a>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-3">Redes Sociais:</h4>
+                                    <div class="flex space-x-6">
+                                        <a href="https://www.youtube.com/@pmal.oficial" target="_blank" class="text-blue-200 hover:text-white transition-colors">
+                                            <i class="fab fa-youtube text-2xl"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/pmal.oficial" target="_blank" class="text-blue-200 hover:text-white transition-colors">
+                                            <i class="fab fa-instagram text-2xl"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Slide 17 - Institution Information -->
-        <section id="slide17" class="slide bg-gradient-to-br from-blue-900 to-blue-800">
-            <div class="bg-pattern"></div>
-            <div class="slide-content fade-in">
-                <h2 class="text-4xl font-bold mb-12 text-center">Informações <span class="highlight-text">Institucionais</span></h2>
                 
-                <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                    <div class="bg-white/10 p-8 rounded-xl card-hover">
-                        <div class="flex items-center mb-6">
-                            <i class="fas fa-shield-alt text-blue-400 text-4xl mr-4 icon-30"></i>
-                            <h3 class="text-2xl font-bold">Polícia Militar de Alagoas</h3>
-                        </div>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
-                                <div>
-                                    <h4 class="font-semibold text-lg mb-1">Endereço</h4>
-                                    <p class="text-blue-100">Av. da Paz, 1000 - Centro, Maceió/AL</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i class="fas fa-phone text-blue-400 mt-1 mr-4 text-2xl icon-30"></i>
-                                <div>
-                                    <h4 class="font-semibold text-lg mb-1">Telefone</h4>
-                                    <p class="text-blue-100">(82) 3214-0000</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white/10 p-8 rounded-xl card-hover">
-                        <div class="flex items-center mb-6">
-                            <i class="fas fa-globe text-blue-400 text-4xl mr-4 icon-30"></i>
-                            <h3 class="text-2xl font-bold">Mídias Sociais</h3>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <a href="#" class="bg-blue-600/40 px-4 py-3 rounded-lg flex items-center">
-                                <i class="fab fa-instagram mr-3 text-2xl icon-30"></i>
-                                <span>@pmal.oficial</span>
-                            </a>
-                            <a href="#" class="bg-blue-600/40 px-4 py-3 rounded-lg flex items-center">
-                                <i class="fab fa-facebook mr-3 text-2xl icon-30"></i>
-                                <span>/PMAlagoasOficial</span>
-                            </a>
-                            <a href="#" class="bg-blue-600/40 px-4 py-3 rounded-lg flex items-center">
-                                <i class="fab fa-youtube mr-3 text-2xl icon-30"></i>
-                                <span>PM Alagoas Oficial</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-12 bg-blue-900/50 p-6 rounded-xl max-w-2xl mx-auto card-hover">
-                    <div class="flex items-center justify-center">
-                        <i class="fas fa-info-circle text-blue-300 mr-4 text-3xl icon-30"></i>
-                        <p class="text-lg">Para mais informações, entre em contato com a Diretoria de Comunicação da PMAL</p>
+                <div class="bg-white/10 p-6 rounded-xl max-w-2xl mx-auto card-hover">
+                    <div class="flex items-center justify-center space-x-4">
+                        <i class="fas fa-shield-alt text-blue-400 text-2xl"></i>
+                        <p class="text-lg text-center">"Servir e Proteger com Excelência"</p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer py-3 px-6">
-        <div class="max-w-6xl mx-auto flex justify-end">
-            <div class="text-blue-200 text-sm" id="currentDateTime">
-                <!-- JavaScript will update this -->
-            </div>
-        </div>
-    </footer>
-
     <script>
         // Navigation dots functionality
         const dots = document.querySelectorAll('.nav-dot');
         const slides = document.querySelectorAll('.slide');
         
+        // Click on dot to scroll to corresponding slide
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const targetId = dot.getAttribute('data-target');
+                const targetSlide = document.getElementById(targetId);
+                
+                // Remove active class from all dots
+                dots.forEach(d => d.classList.remove('active'));
+                // Add active class to clicked dot
+                dot.classList.add('active');
+                
+                // Scroll to target slide
+                targetSlide.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Observe which slide is in view to update navigation dots
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const slideId = entry.target.id;
+                    const correspondingDot = document.querySelector(`.nav-dot[data-target="${slideId}"]`);
+                    
+                    // Remove active class from all dots
+                    dots.forEach(d => d.classList.remove('active'));
+                    
+                    // Add active class to corresponding dot
+                    if (correspondingDot) {
+                        correspondingDot.classList.add('active');
+                    }
+                }
+            });
+        }, { 
+            threshold: 0.7,
+            rootMargin: '-100px 0px -100px 0px' 
+        });
+        
+        // Observe all slides
+        slides.forEach(slide => observer.observe(slide));
+        
+        // Add fade-in animation when slides come into view
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.slide-content')?.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        slides.forEach(slide => fadeObserver.observe(slide));
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const currentSlideIndex = Array.from(slides).findIndex(slide => {
+                const rect = slide.getBoundingClientRect();
+                return rect.top >= 0 && rect.top <= window.innerHeight / 2;
+            });
+            
+            if (e.key === 'ArrowDown' && currentSlideIndex < slides.length - 1) {
+                e.preventDefault();
+                slides[currentSlideIndex + 1].scrollIntoView({ behavior: 'smooth' });
+            } else if (e.key === 'ArrowUp' && currentSlideIndex > 0) {
+                e.preventDefault();
+                slides[currentSlideIndex - 1].scrollIntoView({ behavior: 'smooth' });
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                slides[0].scrollIntoView({ behavior: 'smooth' });
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                slides[slides.length - 1].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
         // Update date and time in footer
         function updateDateTime() {
             const now = new Date();
-            const options = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            document.getElementById('currentDateTime').textContent = 
-                `Maceió/AL - ${now.toLocaleDateString('pt-BR', options)}`;
+            
+            // Format date (DD/MM/YYYY)
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const formattedDate = `${day}/${month}/${year}`;
+            
+            // Format time (HH:MM:SS)
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
+            
+            // Update elements
+            document.getElementById('date').textContent = formattedDate;
+            document.getElementById('time').textContent = formattedTime;
         }
         
         // Update immediately and then every second
         updateDateTime();
         setInterval(updateDateTime, 1000);
-        
-        // Click on dot to scroll to corresponding slide
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const target = dot.getAttribute('data-target');
-                const slide = document.getElementById(target);
-                slide.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        
-        // Update active dot based on scroll position
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            
-            slides.forEach((slide, index) => {
-                const slideTop = slide.offsetTop;
-                const slideHeight = slide.offsetHeight;
-                
-                if (scrollPosition >= slideTop - 100 && 
-                    scrollPosition < slideTop + slideHeight - 100) {
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    dots[index].classList.add('active');
-                }
-            });
-        });
     </script>
 </body>
 </html>
